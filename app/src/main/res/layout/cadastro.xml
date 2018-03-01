@@ -24,28 +24,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <Button
-                android:id="@+id/btCEntrar"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="50dp"
-                android:layout_marginStart="50dp"
-                android:background="@drawable/btn_drw"
-                android:text="@string/entrar"
-                android:textAlignment="center"
-                android:textColor="@android:color/white"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.01"
-                app:layout_constraintStart_toStartOf="parent" />
-
             <EditText
                 android:id="@+id/etCNome"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="50dp"
                 android:layout_marginStart="50dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="32dp"
                 android:backgroundTint="@android:color/white"
                 android:ems="10"
                 android:hint="@string/nome"
@@ -59,13 +44,13 @@
                 android:id="@+id/textView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
+                android:layout_marginEnd="50dp"
                 android:layout_marginStart="50dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="125dp"
                 android:text="@string/cadastro"
                 android:textAlignment="viewStart"
                 android:textColor="@android:color/white"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -110,6 +95,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="50dp"
                 android:layout_marginStart="50dp"
+                android:layout_marginTop="24dp"
                 android:backgroundTint="@android:color/white"
                 android:ems="10"
                 android:hint="Confirmar senha"
@@ -118,54 +104,26 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.01"
                 app:layout_constraintStart_toStartOf="parent"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteY="295dp" />
+                app:layout_constraintTop_toBottomOf="@+id/etCSenha"
+                tools:ignore="MissingConstraints" />
 
-            <EditText
-                android:id="@+id/etDtNasc"
+            <Button
+                android:id="@+id/btCEntrar"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="50dp"
-                android:layout_marginStart="50dp"
-                android:layout_marginTop="24dp"
-                android:backgroundTint="@android:color/white"
-                android:ems="10"
-                android:hint="Data de nascimento"
-                android:inputType="date"
-                android:textColorHint="@android:color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etGenero" />
-
-            <EditText
-                android:id="@+id/etGenero"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="50dp"
-                android:layout_marginStart="50dp"
-                android:layout_marginTop="24dp"
-                android:backgroundTint="@android:color/white"
-                android:ems="10"
-                android:hint="Gênero"
-                android:inputType="textPersonName"
-                android:textColorHint="@android:color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etConfirmarSenha"
-                tools:layout_editor_absoluteY="346dp" />
-
-            <ExpandableListView
-                android:id="@+id/grau"
-                android:layout_width="0dp"
-                android:layout_height="75dp"
                 android:layout_marginBottom="24dp"
                 android:layout_marginEnd="50dp"
                 android:layout_marginStart="50dp"
                 android:layout_marginTop="24dp"
-                app:layout_constraintBottom_toTopOf="@+id/btCEntrar"
+                android:background="@drawable/btn_drw"
+                android:text="@string/entrar"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.01"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etDtNasc" />
+                app:layout_constraintTop_toBottomOf="@+id/etConfirmarSenha" />
 
         </android.support.constraint.ConstraintLayout>
 
