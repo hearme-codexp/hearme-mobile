@@ -30,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="50dp"
                 android:layout_marginStart="50dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="24dp"
                 android:backgroundTint="@android:color/white"
                 android:ems="10"
                 android:hint="@string/nome"
@@ -46,7 +46,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="50dp"
                 android:layout_marginStart="50dp"
-                android:layout_marginTop="125dp"
+                android:layout_marginTop="24dp"
                 android:text="@string/cadastro"
                 android:textAlignment="viewStart"
                 android:textColor="@android:color/white"
@@ -54,7 +54,7 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
             <EditText
                 android:id="@+id/etCSenha"
@@ -114,7 +114,7 @@
                 android:layout_marginBottom="24dp"
                 android:layout_marginEnd="50dp"
                 android:layout_marginStart="50dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="32dp"
                 android:background="@drawable/btn_drw"
                 android:text="@string/entrar"
                 android:textAlignment="center"
@@ -124,6 +124,18 @@
                 app:layout_constraintHorizontal_bias="0.01"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/etConfirmarSenha" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="174dp"
+                android:layout_height="161dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@mipmap/ic_launcher" />
 
         </android.support.constraint.ConstraintLayout>
 
