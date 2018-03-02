@@ -1,7 +1,9 @@
-package br.senai.sp.informatica.mobile.apphearme;
+package br.senai.sp.informatica.mobile.apphearme.view;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import br.senai.sp.informatica.mobile.apphearme.R;
 
 public class MainActivity extends AppCompatActivity {
 
