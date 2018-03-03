@@ -27,9 +27,13 @@ public class MainActivity extends AppCompatActivity {
         String senha = etSenha.getText().toString();
 
         startActivity(new Intent(this, HomeActivity.class));
+        etLogin.setText(null);
+        etSenha.setText(null);
     }
 
     public void btnCadastrar(View view){
         startActivity(new Intent(this, CadastroActivity.class));
+        etLogin.setText(null);
+        etSenha.setText(null);
     }
 }
