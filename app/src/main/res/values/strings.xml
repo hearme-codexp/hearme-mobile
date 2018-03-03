@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HearMe App</string>
+    <string name="app_name">HearMe</string>
     <string name="esqueci">Esqueci minha senha</string>
     <string name="cadastrar">Cadastrar</string>
     <string name="entrar">Entrar</string>
