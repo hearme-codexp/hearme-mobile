@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import br.senai.sp.informatica.mobile.apphearme.R;
 
@@ -26,9 +27,17 @@ public class MainActivity extends AppCompatActivity {
         String login = etLogin.getText().toString();
         String senha = etSenha.getText().toString();
 
-        startActivity(new Intent(this, HomeActivity.class));
-        etLogin.setText(null);
-        etSenha.setText(null);
+        if(login.equals("")|| senha.equals("")){
+            Toast.makeText(this,"Campos não preenchidos", Toast.LENGTH_SHORT).show();
+        }
+        else if(login.equals("adm@adm.com") && senha.equals("123")){
+            startActivity(new Intent(this, HomeActivity.class));
+            etLogin.setText(null);
+            etSenha.setText(null);
+        }else{
+            Toast.makeText(this,"Usuário ou senha inválidos", Toast.LENGTH_SHORT).show();
+        }
+
     }
 
     public void btnCadastrar(View view){
