@@ -5,10 +5,10 @@
     <string name="entrar">Entrar</string>
     <string name="senha">Senha</string>
     <string name="login">Login</string>
-    <string name="hearme">HEAR.ME</string>
-    <string name="som_01">Som 01</string>
+    <string name="horario">Horário</string>
     <string name="nome">Nome</string>
     <string name="e_mail">E-mail</string>
     <string name="cadastro">CADASTRE-SE</string>
-    <string name="editar_som">EDITAR SOM</string>
+    <string name="hist">Histórico de alertas</string>
+
 </resources>
