@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Switch;
 
@@ -14,7 +15,7 @@ public class HomeActivity extends AppCompatActivity{
 
     private ListView listView;
     private BaseAdapter itemLista;
-    private Switch swBlue;
+    private Button btnBluetooth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,10 +25,10 @@ public class HomeActivity extends AppCompatActivity{
         itemLista = new HistoricoAdapter();
         listView = findViewById(R.id.lista);
         listView.setAdapter(itemLista);
-        swBlue = findViewById(R.id.swBlue);
+        btnBluetooth = findViewById(R.id.btnBlue);
     }
 
-    public void switchBlue(View view){
+    public void btnBluetooth(View view){
             startActivity(new Intent(this, BlueActivity.class));
     }
 

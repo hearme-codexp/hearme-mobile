@@ -30,8 +30,6 @@ public class BlueActivity extends AppCompatActivity {
         setContentView(R.layout.bluetooth);
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         pairedDevices = bluetoothAdapter.getBondedDevices();
-        Intent turnOn = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-        startActivityForResult(turnOn, 0);
 
         swOnOff = findViewById(R.id.swOnOff);
         btnlist = findViewById(R.id.btnList);
@@ -42,11 +40,9 @@ public class BlueActivity extends AppCompatActivity {
     }
 
     public void setSwOnOff(View view){
-        if(!swOnOff.isActivated()){
-            Intent turnOn = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-            startActivityForResult(turnOn, 0);
-            Toast.makeText(getApplicationContext(), "Blue on", Toast.LENGTH_SHORT).show();
-        }
+        Intent turnOn = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+        startActivityForResult(turnOn, 0);
+        Toast.makeText(getApplicationContext(), "Blue on", Toast.LENGTH_SHORT).show();
     }
 
     public void visible(View view){

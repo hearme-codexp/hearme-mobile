@@ -16,6 +16,7 @@
         android:layout_marginBottom="8dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-condensed"
         android:text="@string/horario"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"

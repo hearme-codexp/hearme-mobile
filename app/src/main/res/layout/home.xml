@@ -14,6 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginTop="24dp"
+        android:fontFamily="sans-serif-condensed"
         android:text="@string/hist"
         android:textColor="@android:color/white"
         android:textSize="25dp"
@@ -34,18 +35,17 @@
 
     </ListView>
 
-    <Switch
-        android:id="@+id/swBlue"
+    <Button
+        android:id="@+id/btnBlue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginEnd="25dp"
+        android:onClick="btnBluetooth"
         android:text="Blue"
         android:textColor="@android:color/white"
-        android:onClick="switchBlue"
+        android:background="@drawable/btn_drw"
         app:layout_constraintBottom_toBottomOf="@+id/tvHome"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvHome"
         app:layout_constraintTop_toTopOf="@+id/tvHome" />
 
 </android.support.constraint.ConstraintLayout>
