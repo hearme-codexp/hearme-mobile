@@ -1,15 +1,21 @@
 package br.senai.sp.informatica.mobile.apphearme.model;
 
-public class Usuario {
+import org.json.JSONObject;
 
+/**
+ * Created by CodeXP on 14/03/2018.
+ */
+
+public class Login {
     private String nome;
-    private String email;
     private String senha;
 
-    public Usuario(String nome, String email, String senha){
-        this.nome = nome;
-        this.email = email;
-        this.senha = senha;
+    @Override
+    public String toString() {
+        return "{" +
+                "nome='" + nome + '\'' +
+                ", senha=" + senha +
+                '}';
     }
 
     public String getNome() {
@@ -18,14 +24,6 @@ public class Usuario {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public String getSenha() {
