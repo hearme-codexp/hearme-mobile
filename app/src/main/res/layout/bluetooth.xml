@@ -11,38 +11,34 @@
         android:id="@+id/swOnOff"
         android:layout_width="40dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="28dp"
         android:onClick="setSwOnOff"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnGetVisible"
-        android:layout_width="103dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:onClick="visible"
+        android:layout_marginEnd="64dp"
         android:text="Get visible"
         app:layout_constraintBottom_toBottomOf="@+id/btnList"
-        app:layout_constraintEnd_toStartOf="@+id/tgScan"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/btnList"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/btnList"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imageView"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="52dp"
         android:layout_marginTop="16dp"
         android:onClick="list"
         android:text="List devices"
-        app:layout_constraintEnd_toStartOf="@+id/btnGetVisible"
-        app:layout_constraintHorizontal_bias="0.019"
         app:layout_constraintStart_toEndOf="@+id/swOnOff"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -57,18 +53,5 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnList" />
-
-    <ToggleButton
-        android:id="@+id/tgScan"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="8dp"
-        android:text="ToggleButton"
-
-        app:layout_constraintBottom_toBottomOf="@+id/btnGetVisible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btnGetVisible"
-        app:layout_constraintVertical_bias="1.0" />
 
 </android.support.constraint.ConstraintLayout>
