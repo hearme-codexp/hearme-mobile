@@ -37,15 +37,30 @@
 
     <Button
         android:id="@+id/btnBlue"
-        android:layout_width="wrap_content"
+        android:layout_width="59dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="25dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/btn_drw"
         android:onClick="btnBluetooth"
         android:text="Blue"
         android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/tvHome"
+        app:layout_constraintEnd_toStartOf="@+id/btnMap"
+        app:layout_constraintTop_toTopOf="@+id/tvHome"
+        app:layout_constraintVertical_bias="0.571" />
+
+    <Button
+        android:id="@+id/btnMap"
+        android:layout_width="64dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
         android:background="@drawable/btn_drw"
+        android:onClick="shwMap"
+        android:text="Map"
+        android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="@+id/tvHome"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvHome" />
+        app:layout_constraintTop_toTopOf="@+id/tvHome"
+        app:layout_constraintVertical_bias="0.571" />
 
 </android.support.constraint.ConstraintLayout>

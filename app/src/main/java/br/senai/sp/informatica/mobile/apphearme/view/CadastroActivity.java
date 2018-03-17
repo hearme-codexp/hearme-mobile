@@ -23,13 +23,10 @@ public class CadastroActivity extends AppCompatActivity {
     private Button btnEntrar;
     private EditText etLogin;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cadastro);
-
         etNome = findViewById(R.id.etCNome);
         etEmail = findViewById(R.id.etCEmail);
         etSenha = findViewById(R.id.etCSenha);
@@ -53,8 +50,7 @@ public class CadastroActivity extends AppCompatActivity {
                     public void onResponse(Call<Login> call, Response<Login> response) {
                         if(response.isSuccessful()){
                             Login dados = response.body();
-                            // dizer que deu certo
-                            // transição de tela
+
                         } else {
                             Toast.makeText(getApplicationContext(), "Usuário ou senha inválidos", Toast.LENGTH_LONG).show();
                         }
@@ -72,14 +68,13 @@ public class CadastroActivity extends AppCompatActivity {
     }
 
     public void btnCEntrar (View view){
-        String nome = etNome.getText().toString();
+       String nome = etNome.getText().toString();
         String email = etEmail.getText().toString();
         String senha = etSenha.getText().toString();
         String confSenha = etConfirmarSenha.getText().toString();
 
-
-        if(nome.equals("") || email.equals("") || senha.equals("") || confSenha.equals("")) {
-            Toast.makeText(this, "Campos não preenchidos", Toast.LENGTH_SHORT).show();
+       if(nome.equals(null) || email.equals(null) || senha.equals(null) || confSenha.equals(null)) {
+           Toast.makeText(this, "Campos não preenchidos", Toast.LENGTH_SHORT).show();
         }else{
             startActivity(new Intent(this, HomeActivity.class));
             finish();

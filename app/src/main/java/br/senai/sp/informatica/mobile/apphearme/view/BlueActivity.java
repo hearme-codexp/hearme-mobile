@@ -49,11 +49,10 @@ public class BlueActivity extends AppCompatActivity {
 
     public void setSwOnOff(View view) {
         //TODO: Desligar bluetooth
-        if (!bluetoothAdapter.isEnabled()) {
             Intent turnOn = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
             startActivityForResult(turnOn, 0);
             Toast.makeText(getApplicationContext(), "Blue on", Toast.LENGTH_SHORT).show();
-        }
+
     }
 
     /*

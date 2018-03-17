@@ -32,4 +32,8 @@ public class HomeActivity extends AppCompatActivity{
             startActivity(new Intent(this, BlueActivity.class));
     }
 
+    public void shwMap(View view){
+        startActivity(new Intent(this, MapsActivity.class));
+    }
+
 }
