@@ -39,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
         etLogin = findViewById(R.id.etLogin);
         etSenha = findViewById(R.id.etSenha);
 
-
     }
     public void btnCadastrar(View view) {
         startActivity(new Intent(getApplicationContext(), CadastroActivity.class));
