@@ -7,40 +7,40 @@
     android:transitionGroup="true"
     tools:context=".view.BlueActivity">
 
-    <Switch
-        android:id="@+id/swOnOff"
-        android:layout_width="40dp"
+    <Button
+        android:id="@+id/btnOnOff"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="28dp"
-        android:onClick="setSwOnOff"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:onClick="setbtnOnOff"
+        android:text="on"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnGetVisible"
-        android:layout_width="wrap_content"
+        android:layout_width="105dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="64dp"
+        android:layout_marginStart="16dp"
         android:text="Get visible"
         app:layout_constraintBottom_toBottomOf="@+id/btnList"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btnList"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toEndOf="@+id/btnList"
+        app:layout_constraintTop_toTopOf="@+id/btnList" />
 
     <Button
         android:id="@+id/btnList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imageView"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
         android:onClick="list"
         android:text="List devices"
-        app:layout_constraintStart_toEndOf="@+id/swOnOff"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/btnOnOff"
+        app:layout_constraintStart_toEndOf="@+id/btnOnOff"
+        app:layout_constraintTop_toTopOf="@+id/btnOnOff"
+        tools:ignore="MissingConstraints" />
 
     <ListView
         android:id="@+id/blueList"

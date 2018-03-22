@@ -27,7 +27,7 @@ import br.senai.sp.informatica.mobile.apphearme.model.Device;
 
 public class BlueActivity extends AppCompatActivity {
 
-    private Button swOnOff, btnlist, btnVisible;
+    private Button btnOnOff, btnlist, btnVisible;
     private BluetoothAdapter bluetoothAdapter;
     private Set<BluetoothDevice> pairedDevices;
     ListView listView;
@@ -39,7 +39,7 @@ public class BlueActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bluetooth);
 
-        swOnOff = findViewById(R.id.swOnOff);
+        btnOnOff = findViewById(R.id.btnOnOff);
         btnlist = findViewById(R.id.btnList);
         btnVisible = findViewById(R.id.btnGetVisible);
 
@@ -47,19 +47,13 @@ public class BlueActivity extends AppCompatActivity {
         listView = findViewById(R.id.blueList);
     }
 
-    public void setSwOnOff(View view) {
-        //TODO: Desligar bluetooth
+    public void setbtnOnOff(View view) {
+        if(!btnOnOff.isActivated()) {
             Intent turnOn = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
             startActivityForResult(turnOn, 0);
             Toast.makeText(getApplicationContext(), "Blue on", Toast.LENGTH_SHORT).show();
-
+        }
     }
-
-    /*
-    public void visible(View view){
-        Intent getVisible = new Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE);
-        startActivityForResult(getVisible, 0);
-    }*/
 
     BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
         @Override
