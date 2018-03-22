@@ -9,8 +9,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import br.senai.sp.informatica.mobile.apphearme.R;
-import br.senai.sp.informatica.mobile.apphearme.config.RetrofitConfig;
+import br.senai.sp.informatica.mobile.apphearme.domain.ApiResponse;
 import br.senai.sp.informatica.mobile.apphearme.model.Login;
+import br.senai.sp.informatica.mobile.apphearme.model.Usuario;
+import br.senai.sp.informatica.mobile.apphearme.service.HearmeRestService;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -20,7 +22,7 @@ public class CadastroActivity extends AppCompatActivity {
     private EditText etEmail;
     private EditText etConfirmarSenha;
     private EditText etSenha;
-    private Button btnEntrar;
+    private Button btCEntrar;
     private EditText etLogin;
 
     @Override
@@ -65,20 +67,39 @@ public class CadastroActivity extends AppCompatActivity {
 //            }
 //        });
 //
+
+        btCEntrar = findViewById(R.id.btCEntrar);
+
+        //Criando um restservice aqui, é o metodo que vai fazer a comunicação com back
+        final HearmeRestService service = new HearmeRestService();
+
+        btCEntrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String nome = etNome.getText().toString();
+                String senha = etSenha.getText().toString();
+                String email = etEmail.getText().toString();
+
+                //Criando usuário:
+                Usuario usuario = new Usuario();
+                usuario.setEmail(email);
+                usuario.setSenha(senha);
+                usuario.setNome(nome);
+
+                service.cadastrarUsuario(usuario, new ApiResponse<Usuario>() {
+                    @Override //Possíveis retornos previstos pelo ApiResponse
+                    public void onSuccess(Usuario data) {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable t) {
+
+                    }
+                });
+            }
+        });
     }
-
-    public void btnCEntrar (View view){
-       String nome = etNome.getText().toString();
-        String email = etEmail.getText().toString();
-        String senha = etSenha.getText().toString();
-        String confSenha = etConfirmarSenha.getText().toString();
-
-       if(nome.equals(null) || email.equals(null) || senha.equals(null) || confSenha.equals(null)) {
-           Toast.makeText(this, "Campos não preenchidos", Toast.LENGTH_SHORT).show();
-        }else{
-            startActivity(new Intent(this, HomeActivity.class));
-            finish();
-        }
-    }
-
 }
+

@@ -32,9 +32,8 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 
-    implementation 'org.codehaus.jackson:jackson-mapper-asl:1.9.13'
     implementation 'com.squareup.retrofit2:retrofit:2.3.0'
-    implementation 'com.squareup.retrofit2:converter-jackson:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
 
     implementation 'com.android.support:recyclerview-v7:26.1.0'
 //    implementation 'com.thoughtbot:expandablerecyclerview:1.3'

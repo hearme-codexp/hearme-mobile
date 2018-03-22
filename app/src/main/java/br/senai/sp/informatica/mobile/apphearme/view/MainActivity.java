@@ -1,25 +1,21 @@
 package br.senai.sp.informatica.mobile.apphearme.view;
 
-import android.bluetooth.BluetoothAdapter;
-import android.bluetooth.BluetoothDevice;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.Set;
+
+import java.util.List;
 
 import br.senai.sp.informatica.mobile.apphearme.R;
-import br.senai.sp.informatica.mobile.apphearme.config.RetrofitConfig;
-import br.senai.sp.informatica.mobile.apphearme.model.Login;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import br.senai.sp.informatica.mobile.apphearme.domain.ApiResponse;
+import br.senai.sp.informatica.mobile.apphearme.model.Alerta;
+import br.senai.sp.informatica.mobile.apphearme.service.HearmeRestService;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,6 +35,18 @@ public class MainActivity extends AppCompatActivity {
         etLogin = findViewById(R.id.etLogin);
         etSenha = findViewById(R.id.etSenha);
 
+        HearmeRestService service = new HearmeRestService();
+        service.listaAlertas(new ApiResponse<List<Alerta>>() {
+            @Override
+            public void onSuccess(List<Alerta> data) {
+
+            }
+
+            @Override
+            public void onError(Throwable t) {
+
+            }
+        });
     }
     public void btnCadastrar(View view) {
         startActivity(new Intent(getApplicationContext(), CadastroActivity.class));
