@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/HearMe-App.iml" filepath="$PROJECT_DIR$/HearMe-App.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:/Users/CodeXP/hearme-mobile/apphearme.iml" filepath="C:/Users/CodeXP/hearme-mobile/apphearme.iml" />
       <module fileurl="file://$PROJECT_DIR$/apphearme.iml" filepath="$PROJECT_DIR$/apphearme.iml" />
-      <module fileurl="file://C:\Users\CodeXP\hearme-mobile\apphearme.iml" filepath="C:\Users\CodeXP\hearme-mobile\apphearme.iml" />
-      <module fileurl="file://C:\Users\CodeXP\Desktop\app\apphearme\hearme-mobile.iml" filepath="C:\Users\CodeXP\Desktop\app\apphearme\hearme-mobile.iml" />
+      <module fileurl="file://C:/Users/CodeXP/Desktop/app/apphearme/hearme-mobile.iml" filepath="C:/Users/CodeXP/Desktop/app/apphearme/hearme-mobile.iml" />
     </modules>
   </component>
 </project>
