@@ -1,5 +1,6 @@
 package br.senai.sp.informatica.mobile.apphearme.view;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -16,8 +17,9 @@ public class HomeActivity extends AppCompatActivity{
 
     private ListView listView;
     private BaseAdapter itemLista;
-    private Button btnBluetooth;
+    private Button map;
     private FloatingActionButton blue;
+    private final Context ctx = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,15 +29,24 @@ public class HomeActivity extends AppCompatActivity{
         itemLista = new HistoricoAdapter();
         listView = findViewById(R.id.lista);
         listView.setAdapter(itemLista);
+
         blue = findViewById(R.id.floatBlue);
-    }
+        blue.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent i = new Intent(ctx, BlueActivity.class);
+                startActivity(i);
+            }
+        });
+        map = findViewById(R.id.btnMap);
+        map.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent j = new Intent(ctx, MapsActivity.class);
+                startActivity(j);
+            }
+        });
 
-    public void shwMap(View view){
-        startActivity(new Intent(this, MapsActivity.class));
-    }
-
-    public void shwBlue(View view){
-        startActivity(new Intent(this, BlueActivity.class));
     }
 
 }

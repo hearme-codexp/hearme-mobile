@@ -20,12 +20,7 @@ import br.senai.sp.informatica.mobile.apphearme.service.HearmeRestService;
 public class MainActivity extends AppCompatActivity {
 
     private EditText etLogin;
-    private EditText Nome;
-    private EditText Email;
     private EditText etSenha;
-    private EditText ConfirmarSenha;
-    private Button btnEntrar;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
