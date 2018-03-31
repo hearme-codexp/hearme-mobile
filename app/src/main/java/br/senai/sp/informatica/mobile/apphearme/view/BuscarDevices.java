@@ -47,7 +47,7 @@ public class BuscarDevices extends Activity {
         }
 
         blueActivity.bluetoothAdapter.startDiscovery();
-        dialog = ProgressDialog.show(this, "BlueEx", "Buscando devices...", false, true);
+        dialog = ProgressDialog.show(this, "Wearable", "Buscando devices...", false, true);
     }
 
     private final BroadcastReceiver mReceiver = new BroadcastReceiver() {

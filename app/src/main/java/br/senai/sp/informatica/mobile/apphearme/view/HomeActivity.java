@@ -18,7 +18,7 @@ public class HomeActivity extends AppCompatActivity{
     private ListView listView;
     private BaseAdapter itemLista;
     private Button map;
-    private FloatingActionButton blue;
+    private Button blue;
     private final Context ctx = this;
 
     @Override
@@ -30,7 +30,7 @@ public class HomeActivity extends AppCompatActivity{
         listView = findViewById(R.id.lista);
         listView.setAdapter(itemLista);
 
-        blue = findViewById(R.id.floatBlue);
+        blue = findViewById(R.id.btnBlue);
         blue.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){

@@ -34,6 +34,8 @@
         </activity>
         <activity android:name=".view.CadastroActivity" />
         <activity android:name=".view.HomeActivity" />
+        <activity android:name=".view.BlueActivity" />
+        <activity android:name=".view.BuscarDevices" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
