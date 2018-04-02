@@ -30,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
         etLogin = findViewById(R.id.etLogin);
         etSenha = findViewById(R.id.etSenha);
 
+        etLogin.setText("adm@adm.com");
+        etSenha.setText("123");
+
         HearmeRestService service = new HearmeRestService();
         service.listaAlertas(new ApiResponse<List<Alerta>>() {
             @Override

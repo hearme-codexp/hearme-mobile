@@ -3,13 +3,11 @@ package br.senai.sp.informatica.mobile.apphearme.view;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Switch;
 
 import br.senai.sp.informatica.mobile.apphearme.R;
 
@@ -18,7 +16,8 @@ public class HomeActivity extends AppCompatActivity{
     private ListView listView;
     private BaseAdapter itemLista;
     private Button map;
-    private Button blue;
+    private Button btBuscar;
+    private Button btLigar;
     private final Context ctx = this;
 
     @Override
@@ -30,14 +29,24 @@ public class HomeActivity extends AppCompatActivity{
         listView = findViewById(R.id.lista);
         listView.setAdapter(itemLista);
 
-        blue = findViewById(R.id.btnBlue);
-        blue.setOnClickListener(new View.OnClickListener(){
+        btBuscar = (Button) findViewById(R.id.btBuscar);
+        btBuscar.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
+            public void onClick(View v) {
+                Intent i = new Intent(ctx, BuscarDevices.class);
+                startActivity(i);
+            }
+        });
+
+        btLigar = (Button) findViewById(R.id.btLigar);
+        btLigar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 Intent i = new Intent(ctx, BlueActivity.class);
                 startActivity(i);
             }
         });
+
         map = findViewById(R.id.btnMap);
         map.setOnClickListener(new View.OnClickListener(){
             @Override

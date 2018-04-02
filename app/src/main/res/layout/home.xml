@@ -13,14 +13,14 @@
         android:id="@+id/tvHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:layout_marginStart="25dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginStart="3dp"
         android:layout_marginTop="24dp"
         android:fontFamily="sans-serif-condensed"
         android:text="@string/hist"
         android:textColor="@android:color/white"
         android:textSize="25dp"
-        app:layout_constraintEnd_toStartOf="@+id/floatBlue"
+        app:layout_constraintEnd_toStartOf="@+id/btLigar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -40,30 +40,43 @@
 
     <Button
         android:id="@+id/btnMap"
-        android:layout_width="64dp"
+        android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="3dp"
         android:background="@drawable/btn_drw"
         android:text="Map"
         android:textColor="@android:color/white"
+        android:textSize="10dp"
         app:layout_constraintBottom_toBottomOf="@+id/tvHome"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvHome"
-        app:layout_constraintVertical_bias="0.571" />
+        app:layout_constraintTop_toTopOf="@+id/tvHome" />
 
 
     <Button
-        android:id="@+id/btnBlue"
-        android:layout_width="64dp"
+        android:id="@+id/btLigar"
+        android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginEnd="3dp"
         android:background="@drawable/btn_drw"
         android:text="Blue"
         android:textColor="@android:color/white"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btBuscar"
+        app:layout_constraintEnd_toStartOf="@+id/btBuscar"
+        app:layout_constraintTop_toTopOf="@+id/btBuscar"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btBuscar"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="3dp"
+        android:background="@drawable/btn_drw"
+        android:text="Buscar"
+        android:textSize="10dp"
+        android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="@+id/btnMap"
         app:layout_constraintEnd_toStartOf="@+id/btnMap"
-        app:layout_constraintStart_toEndOf="@+id/tvHome"
         app:layout_constraintTop_toTopOf="@+id/btnMap" />
 
 </android.support.constraint.ConstraintLayout>
