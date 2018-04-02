@@ -9,8 +9,11 @@ import android.view.View;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+<<<<<<< HEAD
 
 import java.util.List;
+=======
+>>>>>>> 41975ae... bluetooth ok
 
 import br.senai.sp.informatica.mobile.apphearme.R;
 import br.senai.sp.informatica.mobile.apphearme.domain.ApiResponse;
