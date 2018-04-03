@@ -10,45 +10,31 @@ import android.widget.TextView;
 
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import br.senai.sp.informatica.mobile.apphearme.R;
 import br.senai.sp.informatica.mobile.apphearme.model.Historico;
-import br.senai.sp.informatica.mobile.apphearme.model.HistoricoDAO;
 
 public class HistoricoAdapter extends BaseAdapter{
-    private HistoricoDAO dao = HistoricoDAO.manager;
-    private Map<Integer, Long> mapa;
+    private List<Historico> historicos;
 
     @Override
     public int getCount() {
-        return mapa.size();
+        return historicos.size();
     }
 
     @Override
     public Object getItem(int i) {
-        return dao.getHist((long)i);
+        return historicos.get(i);
     }
 
     @Override
     public long getItemId(int i) {
-        return mapa.get(i);
+        return historicos.get(i).getId();
     }
 
-    public HistoricoAdapter(){
-        criarMapa();
+    public HistoricoAdapter(List<Historico> historicos){
+        this.historicos = historicos;
     }
-
-    private void criarMapa() {
-        mapa = new HashMap<>();
-        List<Historico> lista = dao.getLista();
-
-        for(int linha = 0; linha < lista.size(); linha ++){
-            Historico hist = lista.get(linha);
-            mapa.put(linha, hist.getId());
-        }
-    }
-
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         ConstraintLayout layout;
@@ -62,8 +48,8 @@ public class HistoricoAdapter extends BaseAdapter{
         }
 
         TextView tvHorario = layout.findViewById(R.id.tvHorario);
-        Historico obj = dao.getHist(mapa.get(i));
-        tvHorario.setText(obj.getData());
+        Historico obj = historicos.get(i);
+        tvHorario.setText(obj.getDataHorarioAlerta());
 
         return layout;
     }

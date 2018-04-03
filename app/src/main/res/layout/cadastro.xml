@@ -127,7 +127,6 @@
                 android:layout_marginTop="32dp"
                 android:background="@drawable/btn_drw"
                 android:fontFamily="sans-serif-condensed"
-                android:onClick="btnCEntrar"
                 android:text="@string/entrar"
                 android:textAlignment="center"
                 android:textColor="@android:color/white"

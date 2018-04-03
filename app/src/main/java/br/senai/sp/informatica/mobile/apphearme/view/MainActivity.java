@@ -14,6 +14,7 @@ import java.util.List;
 import br.senai.sp.informatica.mobile.apphearme.R;
 import br.senai.sp.informatica.mobile.apphearme.domain.ApiResponse;
 import br.senai.sp.informatica.mobile.apphearme.model.Alerta;
+import br.senai.sp.informatica.mobile.apphearme.model.Historico;
 import br.senai.sp.informatica.mobile.apphearme.service.HearmeRestService;
 
 
@@ -29,22 +30,6 @@ public class MainActivity extends AppCompatActivity {
 
         etLogin = findViewById(R.id.etLogin);
         etSenha = findViewById(R.id.etSenha);
-
-        etLogin.setText("adm@adm.com");
-        etSenha.setText("123");
-
-        HearmeRestService service = new HearmeRestService();
-        service.listaAlertas(new ApiResponse<List<Alerta>>() {
-            @Override
-            public void onSuccess(List<Alerta> data) {
-
-            }
-
-            @Override
-            public void onError(Throwable t) {
-
-            }
-        });
     }
     public void btnCadastrar(View view) {
         startActivity(new Intent(getApplicationContext(), CadastroActivity.class));
