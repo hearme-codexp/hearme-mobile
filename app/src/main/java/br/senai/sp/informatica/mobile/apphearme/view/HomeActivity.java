@@ -4,15 +4,21 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
+import java.util.List;
+
 import br.senai.sp.informatica.mobile.apphearme.R;
+import br.senai.sp.informatica.mobile.apphearme.domain.ApiResponse;
+import br.senai.sp.informatica.mobile.apphearme.model.Historico;
+import br.senai.sp.informatica.mobile.apphearme.service.HearmeRestService;
 
 public class HomeActivity extends AppCompatActivity{
-
+    private final String TAG = "HomeActivity";
     private ListView listView;
     private BaseAdapter itemLista;
     private Button map;
@@ -25,9 +31,21 @@ public class HomeActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
 
-        itemLista = new HistoricoAdapter();
-        listView = findViewById(R.id.lista);
-        listView.setAdapter(itemLista);
+        HearmeRestService service = new HearmeRestService();
+        service.listaHistorico(new ApiResponse<List<Historico>>() {
+
+            @Override
+            public void onSuccess(List<Historico> historicos) {
+                itemLista = new HistoricoAdapter(historicos);
+                listView = findViewById(R.id.lista);
+                listView.setAdapter(itemLista);
+            }
+
+            @Override
+            public void onError(Throwable t) {
+                Log.e(TAG, "Erro ao listar históricos", t);
+            }
+        });
 
         btBuscar = (Button) findViewById(R.id.btBuscar);
         btBuscar.setOnClickListener(new View.OnClickListener() {

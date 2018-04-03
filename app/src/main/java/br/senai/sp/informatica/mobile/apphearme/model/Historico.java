@@ -1,30 +1,60 @@
 package br.senai.sp.informatica.mobile.apphearme.model;
-
-import java.util.Date;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 public class Historico {
-    private long id;
-    private String data;
-    //private Date data;
 
-    public Historico(long id, String data){
-        this.id = id;
-        this.data = data;
+    @SerializedName("id")
+    @Expose
+    private Integer id;
+    @SerializedName("clienteId")
+    @Expose
+    private Integer clienteId;
+    @SerializedName("data")
+    @Expose
+    private String dataHorarioAlerta;
+    @SerializedName("latitude")
+    @Expose
+    private Float lat;
+    @SerializedName("longitude")
+    @Expose
+    private Float lon;
+
+    public int getId() {
+        return this.id;
     }
 
-    public long getId() {
-        return id;
+    public int getClienteId() {
+        return clienteId;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setClienteId(Integer clienteId) {
+        this.clienteId = clienteId;
     }
 
-    public String getData() {
-        return data;
+    public String getDataHorarioAlerta() {
+        return dataHorarioAlerta;
     }
 
-    public void setData(String data) {
-        this.data = data;
+    public void setDataHorarioAlerta(String dataHorarioAlerta) {
+        this.dataHorarioAlerta = dataHorarioAlerta;
+    }
+
+    public float getLat() {
+        return lat;
+    }
+
+    public void setLat(float lat) {
+        this.lat = lat;
+    }
+
+    public float getLon() {
+        return lon;
+    }
+
+    public void setLon(float lon) {
+        this.lon = lon;
     }
 }
+
+
