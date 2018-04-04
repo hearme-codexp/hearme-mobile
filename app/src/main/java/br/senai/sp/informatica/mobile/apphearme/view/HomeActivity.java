@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.BaseAdapter;
 import android.widget.Button;
@@ -45,7 +47,7 @@ public class HomeActivity extends AppCompatActivity{
             }
         });
 
-        btBuscar = (Button) findViewById(R.id.btBuscar);
+       /* btBuscar = (Button) findViewById(R.id.btBuscar);
         btBuscar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,8 +72,31 @@ public class HomeActivity extends AppCompatActivity{
                 Intent j = new Intent(ctx, MapsActivity.class);
                 startActivity(j);
             }
-        });
+        }); */
 
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
 
-}
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.btLigar:
+                Intent i = new Intent(ctx, BlueActivity.class);
+                return  true;
+            case R.id.btBuscar:
+                Intent j = new Intent(ctx, BuscarDevices.class);
+                return  true;
+            case R.id.mapa:
+                startActivity(new Intent(this, MapsActivity.class));
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+
+    }

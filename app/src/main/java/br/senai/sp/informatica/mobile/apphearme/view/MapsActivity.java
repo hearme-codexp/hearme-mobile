@@ -1,7 +1,9 @@
 package br.senai.sp.informatica.mobile.apphearme.view;
 
+import android.provider.SyncStateContract;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -10,20 +12,33 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.List;
+
 import br.senai.sp.informatica.mobile.apphearme.R;
+import br.senai.sp.informatica.mobile.apphearme.domain.ApiResponse;
+import br.senai.sp.informatica.mobile.apphearme.model.Historico;
+import br.senai.sp.informatica.mobile.apphearme.service.HearmeRestService;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    public final String TAG = "MapsActivity";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
+
+
+
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+
     }
 
 
@@ -38,11 +53,28 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
+        HearmeRestService service = new HearmeRestService();
+        service.listaHistorico(new ApiResponse<List<Historico>>() {
+
+            @Override
+            public void onSuccess(List<Historico> historicos) {
+                for(Historico h : historicos) {
+                    LatLng localizacao = new LatLng(h.getLat(), h.getLon());
+                    mMap.addMarker(new MarkerOptions()
+                            .position(localizacao));
+                }
+            }
+
+            @Override
+            public void onError(Throwable t) {
+                Log.e(TAG, "Erro ao listar históricos", t);
+            }
+        });
+
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
-        LatLng localizacao = new LatLng(-23.5365517, -46.6484966);
-        mMap.addMarker(new MarkerOptions().position(localizacao).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(localizacao, 16f));
+        mMap.getUiSettings().setZoomControlsEnabled(true);
     }
+
+
 }

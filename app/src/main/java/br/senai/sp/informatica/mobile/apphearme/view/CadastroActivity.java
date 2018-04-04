@@ -33,40 +33,6 @@ public class CadastroActivity extends AppCompatActivity {
         etEmail = findViewById(R.id.etCEmail);
         etSenha = findViewById(R.id.etCSenha);
         etConfirmarSenha = findViewById(R.id.etConfirmarSenha);
-        //btnEntrar = findViewById(R.id.btCEntrar);
-
-//        btnEntrar.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                String nome = etNome.getText().toString();
-//                String senha = etSenha.getText().toString();
-//
-//                Login login = new Login();
-//                login.setNome(nome);
-//                login.setSenha(senha);
-//                Call<Login> call = new RetrofitConfig().getLoginService().fazerLogin(login);
-//
-//                call.enqueue(new Callback<Login>() {
-//                    @Override
-//                    public void onResponse(Call<Login> call, Response<Login> response) {
-//                        if(response.isSuccessful()){
-//                            Login dados = response.body();
-//
-//                        } else {
-//                            Toast.makeText(getApplicationContext(), "Usuário ou senha inválidos", Toast.LENGTH_LONG).show();
-//                        }
-//                    }
-//
-//                    @Override
-//                    public void onFailure(Call<Login> call, Throwable t) {
-//                        Toast.makeText(getApplicationContext(), "Não foi possível enviar dados", Toast.LENGTH_LONG).show();
-//                    }
-//                });
-//
-//            }
-//        });
-//
 
         btCEntrar = findViewById(R.id.btCEntrar);
 

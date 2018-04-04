@@ -22,6 +22,8 @@
         android:roundIcon="@drawable/logo_hearme"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <service android:name=".GeofenceTransitionsIntentService"/>
+
         <activity android:name=".view.MainActivity" />
         <activity
             android:name=".view.Splash"
