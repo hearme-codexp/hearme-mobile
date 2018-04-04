@@ -47,7 +47,7 @@ public class HomeActivity extends AppCompatActivity{
             }
         });
 
-       /* btBuscar = (Button) findViewById(R.id.btBuscar);
+       btBuscar = (Button) findViewById(R.id.btBuscar);
         btBuscar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,7 +72,7 @@ public class HomeActivity extends AppCompatActivity{
                 Intent j = new Intent(ctx, MapsActivity.class);
                 startActivity(j);
             }
-        }); */
+        });
 
     }
     @Override
