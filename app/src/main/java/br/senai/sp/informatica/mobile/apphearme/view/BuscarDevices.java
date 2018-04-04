@@ -26,6 +26,7 @@ import static android.content.pm.PackageManager.PERMISSION_GRANTED;
 
 public class BuscarDevices extends Activity implements AdapterView.OnItemClickListener{
     private static final int PERMISSION_LOCATION = 1;
+    public static final String EXTRA_DEVICE = "DEVICE";
     BlueActivity blueActivity = new BlueActivity();
     private List<BluetoothDevice> lista = new ArrayList<>();
     private ListView listView;
@@ -116,6 +117,11 @@ public class BuscarDevices extends Activity implements AdapterView.OnItemClickLi
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         BluetoothDevice device = lista.get(position);
+
+        // montar intent passando device para activity de comunicação com o back-end
+        Intent intent = new Intent(this, RegistrarHistoricoActivity.class);
+        intent.putExtra(EXTRA_DEVICE, device);
+        startActivity(intent);
     }
 
     protected void onDestroy(){

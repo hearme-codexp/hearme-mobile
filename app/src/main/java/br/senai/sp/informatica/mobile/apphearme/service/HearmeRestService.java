@@ -44,17 +44,17 @@ public class HearmeRestService {
         });
     }
 
-    public void enviarDadoHistorico (Historico dadoHistorico,final ApiResponse<Usuario> callback) {
+    public void enviarDadoHistorico (Historico dadoHistorico,final ApiResponse<Historico> callback) {
         Call<Historico> novodado = service.enviaDadoHistorico(1, dadoHistorico);
         novodado.enqueue(new Callback<Historico>() {
             @Override
             public void onResponse(Call<Historico> call, Response<Historico> response) {
-
+                callback.onSuccess(response.body());
             }
 
             @Override
             public void onFailure(Call<Historico> call, Throwable t) {
-
+                callback.onError(t);
             }
         });
     }
