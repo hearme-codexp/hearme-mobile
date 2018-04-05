@@ -2,7 +2,7 @@ package br.senai.sp.informatica.mobile.apphearme.view;
 
 import android.app.Activity;
 import android.bluetooth.BluetoothDevice;
-import android.nfc.Tag;
+import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.util.Log;
@@ -12,8 +12,8 @@ import com.github.douglasjunior.bluetoothclassiclibrary.BluetoothClassicService;
 import com.github.douglasjunior.bluetoothclassiclibrary.BluetoothConfiguration;
 import com.github.douglasjunior.bluetoothclassiclibrary.BluetoothService;
 import com.github.douglasjunior.bluetoothclassiclibrary.BluetoothStatus;
-import com.github.douglasjunior.bluetoothclassiclibrary.BluetoothWriter;
 
+import java.util.Date;
 import java.util.UUID;
 
 import br.senai.sp.informatica.mobile.apphearme.domain.ApiResponse;
@@ -41,8 +41,7 @@ public class RegistrarHistoricoActivity extends Activity {
         config.deviceName = "NYMERIA";
         config.callListenersInMainThread = true;
 
-        // Bluetooth Classic
-        config.uuid = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb"); // Set null to find all devices on scan.
+        config.uuid = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb");
         BluetoothService.init(config);
 
         final BluetoothService service = BluetoothService.getDefaultInstance();
@@ -54,7 +53,7 @@ public class RegistrarHistoricoActivity extends Activity {
                 Historico novoHistorico = new Historico();
                 novoHistorico.setClienteId(1);
                 // TODO: pegar data de verdade, ver se JSON aceita java.util.Date
-                novoHistorico.setDataHorarioAlerta("Data falsa");
+                novoHistorico.setDataHorarioAlerta(new Date());
                 // TODO: GPS
                 novoHistorico.setLat(120);
                 novoHistorico.setLon(80);

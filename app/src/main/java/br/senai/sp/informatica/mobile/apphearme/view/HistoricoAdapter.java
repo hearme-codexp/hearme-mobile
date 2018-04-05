@@ -49,7 +49,7 @@ public class HistoricoAdapter extends BaseAdapter{
 
         TextView tvHorario = layout.findViewById(R.id.tvHorario);
         Historico obj = historicos.get(i);
-        tvHorario.setText(obj.getDataHorarioAlerta());
+        tvHorario.setText((CharSequence) obj.getDataHorarioAlerta());
 
         return layout;
     }
