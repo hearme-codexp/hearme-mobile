@@ -22,8 +22,8 @@ public interface IHearmeService {
     @GET("Historico/cliente/{id}")
     Call<List<Historico>> listaHistorico(@Path("id") int clienteId);
 
-    @POST("Historico/cliente/{id}")
-    Call<Historico> enviaDadoHistorico(@Path("id") int clienteId, @Body Historico dadoHistorico);
+    @POST("Historico")
+    Call<Historico> enviaDadoHistorico(@Body Historico dadoHistorico);
 
     @POST("Cadastrar/App")
     Call<Usuario> cadastrarUsuario(@Body Usuario usuario);

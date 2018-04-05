@@ -1,5 +1,6 @@
 package br.senai.sp.informatica.mobile.apphearme.service;
 
+import java.io.IOException;
 import java.util.List;
 
 import br.senai.sp.informatica.mobile.apphearme.domain.ApiResponse;
@@ -45,10 +46,17 @@ public class HearmeRestService {
     }
 
     public void enviarDadoHistorico (Historico dadoHistorico,final ApiResponse<Historico> callback) {
-        Call<Historico> novodado = service.enviaDadoHistorico(1, dadoHistorico);
+        Call<Historico> novodado = service.enviaDadoHistorico(dadoHistorico);
         novodado.enqueue(new Callback<Historico>() {
             @Override
             public void onResponse(Call<Historico> call, Response<Historico> response) {
+                if(response.code() != 200) {
+                    try {
+                        callback.onError(new Throwable("Reposta de erro: " + response.code() + " " + response.errorBody().string()));
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
                 callback.onSuccess(response.body());
             }
 

@@ -2,6 +2,8 @@ package br.senai.sp.informatica.mobile.apphearme.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.Date;
+
 public class Historico {
 
     @SerializedName("id")
@@ -12,7 +14,7 @@ public class Historico {
     private Integer clienteId;
     @SerializedName("data")
     @Expose
-    private String dataHorarioAlerta;
+    private Date dataHorarioAlerta;
     @SerializedName("latitude")
     @Expose
     private Float lat;
@@ -32,11 +34,11 @@ public class Historico {
         this.clienteId = clienteId;
     }
 
-    public String getDataHorarioAlerta() {
+    public Date getDataHorarioAlerta() {
         return dataHorarioAlerta;
     }
 
-    public void setDataHorarioAlerta(String dataHorarioAlerta) {
+    public void setDataHorarioAlerta(Date dataHorarioAlerta) {
         this.dataHorarioAlerta = dataHorarioAlerta;
     }
 
