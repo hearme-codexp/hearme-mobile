@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.HomeActivity">
+
+
     <item android:title="Bluetooth"
-        android:id="@+id/bluetooth"
+        android:id="@+id/btLigar"
+        app:showAsAction="never"/>
+
+    <item android:title="Buscar"
+        android:id="@+id/btBuscar"
         app:showAsAction="never"/>
 
     <item android:title="Mapa"

@@ -1,34 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back_drw"
-    tools:context=".view.HomeActivity">
+    android:fitsSystemWindows="true"
+    tools:context="br.senai.sp.informatica.mobile.apphearme.view.HomeActivity">
 
-
-    <TextView
-        android:id="@+id/tvHome"
-        android:layout_width="wrap_content"
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="3dp"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="24dp"
-        android:fontFamily="sans-serif-condensed"
-        android:text="@string/hist"
-        android:textColor="@android:color/white"
-        android:textSize="25dp"
+        android:paddingTop="@dimen/appbar_padding_top"
+        android:theme="@style/AppTheme.AppBarOverlay">
 
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_weight="1"
+            android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:title="@string/app_name">
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
 
     <ListView
         android:id="@+id/lista"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="65dp"
         android:background="@color/back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,47 +42,5 @@
         app:layout_constraintTop_toBottomOf="@+id/tvHome">
 
     </ListView>
-    <Button
-        android:id="@+id/btnMap"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="3dp"
-        android:background="@drawable/btn_drw"
-        android:text="Map"
-        android:textColor="@android:color/white"
-        android:textSize="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/tvHome"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvHome" />
 
-
-    <Button
-        android:id="@+id/btLigar"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="3dp"
-        android:background="@drawable/btn_drw"
-        android:text="Blue"
-        android:textColor="@android:color/white"
-        android:textSize="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/btBuscar"
-        app:layout_constraintEnd_toStartOf="@+id/btBuscar"
-        app:layout_constraintTop_toTopOf="@+id/btBuscar"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/btBuscar"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="3dp"
-        android:background="@drawable/btn_drw"
-        android:text="Buscar"
-        android:textSize="10dp"
-        android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/btnMap"
-        app:layout_constraintEnd_toStartOf="@+id/btnMap"
-        app:layout_constraintTop_toTopOf="@+id/btnMap" />
-
-
-
-</android.support.constraint.ConstraintLayout>
+</android.support.design.widget.CoordinatorLayout>
