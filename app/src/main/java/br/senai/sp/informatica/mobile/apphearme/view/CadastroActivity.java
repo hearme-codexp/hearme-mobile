@@ -52,6 +52,7 @@ public class CadastroActivity extends AppCompatActivity {
                 usuario.setEmail(email);
                 usuario.setSenha(senha);
                 usuario.setNome(nome);
+                startActivity(new Intent(getApplicationContext(), HomeActivity.class));
 
                 service.cadastrarUsuario(usuario, new ApiResponse<Usuario>() {
                     @Override //Possíveis retornos previstos pelo ApiResponse
