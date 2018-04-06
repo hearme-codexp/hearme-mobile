@@ -76,7 +76,7 @@ public class BuscarDevices extends Activity implements AdapterView.OnItemClickLi
         final Set<BluetoothDevice> conhecidos = blueActivity.bluetoothAdapter.getBondedDevices();
         lista.addAll(conhecidos);
         blueActivity.bluetoothAdapter.startDiscovery();
-        dialog = ProgressDialog.show(this, "BlueEx", "Buscando devices...", false, true);
+        dialog = ProgressDialog.show(this, "HearMe", "Buscando devices...", false, true);
     }
 
     private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
