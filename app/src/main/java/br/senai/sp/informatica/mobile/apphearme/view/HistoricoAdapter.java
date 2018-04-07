@@ -2,6 +2,7 @@ package br.senai.sp.informatica.mobile.apphearme.view;
 
 import android.content.Context;
 import android.support.constraint.ConstraintLayout;
+import android.text.format.DateUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,7 @@ import br.senai.sp.informatica.mobile.apphearme.model.Historico;
 
 public class HistoricoAdapter extends BaseAdapter{
     private List<Historico> historicos;
+    private Context ctx;
 
     @Override
     public int getCount() {
@@ -49,7 +51,12 @@ public class HistoricoAdapter extends BaseAdapter{
 
         TextView tvHorario = layout.findViewById(R.id.tvHorario);
         Historico obj = historicos.get(i);
-        tvHorario.setText((CharSequence) obj.getDataHorarioAlerta());
+        CharSequence dataFormatada = DateUtils.getRelativeDateTimeString(ctx,
+                obj.getDataHorarioAlerta().getTime(),
+                DateUtils.DAY_IN_MILLIS,
+                DateUtils.WEEK_IN_MILLIS,
+                DateUtils.FORMAT_SHOW_YEAR);
+        tvHorario.setText(dataFormatada);
 
         return layout;
     }

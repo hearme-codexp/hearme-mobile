@@ -9,15 +9,23 @@ public class Historico {
     @SerializedName("id")
     @Expose
     private Integer id;
+
     @SerializedName("clienteId")
     @Expose
     private Integer clienteId;
+
+    @SerializedName("alertaId")
+    @Expose
+    private Integer alertaId;
+
     @SerializedName("data")
     @Expose
     private Date dataHorarioAlerta;
+
     @SerializedName("latitude")
     @Expose
     private Float lat;
+
     @SerializedName("longitude")
     @Expose
     private Float lon;
@@ -56,6 +64,14 @@ public class Historico {
 
     public void setLon(float lon) {
         this.lon = lon;
+    }
+
+    public Integer getAlertaId() {
+        return alertaId;
+    }
+
+    public void setAlertaId(Integer alertaId) {
+        this.alertaId = alertaId;
     }
 }
 

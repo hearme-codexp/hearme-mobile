@@ -62,10 +62,6 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.btLigar:
-                Intent i = new Intent(ctx, BlueActivity.class);
-                startActivity(new Intent(this, BlueActivity.class));
-                return true;
             case R.id.btBuscar:
                 startActivity(new Intent(this, BuscarDevices.class));
                 return true;
