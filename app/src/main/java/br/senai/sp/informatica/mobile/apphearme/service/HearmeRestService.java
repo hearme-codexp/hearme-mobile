@@ -45,11 +45,11 @@ public class HearmeRestService {
         });
     }
 
-    public void enviarDadoHistorico (Historico dadoHistorico,final ApiResponse<Historico> callback) {
-        Call<Historico> novodado = service.enviaDadoHistorico(dadoHistorico);
-        novodado.enqueue(new Callback<Historico>() {
+    public void enviarDadoHistorico (Historico dadoHistorico,final ApiResponse<Void> callback) {
+        Call<Void> novodado = service.enviaDadoHistorico(dadoHistorico);
+        novodado.enqueue(new Callback<Void>() {
             @Override
-            public void onResponse(Call<Historico> call, Response<Historico> response) {
+            public void onResponse(Call<Void> call, Response<Void> response) {
                 if(response.code() != 200) {
                     try {
                         callback.onError(new Throwable("Reposta de erro: " + response.code() + " " + response.errorBody().string()));
@@ -61,7 +61,7 @@ public class HearmeRestService {
             }
 
             @Override
-            public void onFailure(Call<Historico> call, Throwable t) {
+            public void onFailure(Call<Void> call, Throwable t) {
                 callback.onError(t);
             }
         });

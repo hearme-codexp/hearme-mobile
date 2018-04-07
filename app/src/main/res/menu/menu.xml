@@ -13,5 +13,9 @@
         android:id="@+id/mapa"
         app:showAsAction="never"/>
 
+    <item android:title="Atualizar"
+        android:id="@+id/atualizar"
+        app:showAsAction="never"/>
+
 
 </menu>

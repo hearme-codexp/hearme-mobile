@@ -119,12 +119,12 @@ public class BuscarDevices extends Activity implements AdapterView.OnItemClickLi
                 BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
                 lista.add(device);
                 count++;
-                Toast.makeText(context, "Encontrou: " + device.getName() + ":" + device.getAddress(), Toast.LENGTH_SHORT).show();
+                // Toast.makeText(context, "Encontrou: " + device.getName() + ":" + device.getAddress(), Toast.LENGTH_SHORT).show();
             }else if(BluetoothAdapter.ACTION_DISCOVERY_STARTED.equals(action)){
                 count = 0;
-                Toast.makeText(context, "Busca iniciada", Toast.LENGTH_SHORT).show();
+                // Toast.makeText(context, "Busca iniciada", Toast.LENGTH_SHORT).show();
             }else if(BluetoothAdapter.ACTION_DISCOVERY_FINISHED.equals(action)){
-                Toast.makeText(context, "Busca finalizada", Toast.LENGTH_SHORT).show();
+                // Toast.makeText(context, "Busca finalizada", Toast.LENGTH_SHORT).show();
                 dialog.dismiss();
                 updateLista();
             }
@@ -193,9 +193,9 @@ public class BuscarDevices extends Activity implements AdapterView.OnItemClickLi
                     novoHistorico.setLat(-23.5364722f);
                     novoHistorico.setLon(-46.6463212f);
                 }
-                getHearmeRestService().enviarDadoHistorico(novoHistorico, new ApiResponse<Historico>() {
+                getHearmeRestService().enviarDadoHistorico(novoHistorico, new ApiResponse<Void>() {
                     @Override
-                    public void onSuccess(Historico data) {
+                    public void onSuccess(Void data) {
                         Toast.makeText(BuscarDevices.this, "Cadastrado com sucesso!", Toast.LENGTH_SHORT).show();
                     }
 
@@ -208,22 +208,22 @@ public class BuscarDevices extends Activity implements AdapterView.OnItemClickLi
 
             @Override
             public void onStatusChange(BluetoothStatus status) {
-                Toast.makeText(getBaseContext(), "onStatusChange", Toast.LENGTH_SHORT).show();
+                // Toast.makeText(getBaseContext(), "onStatusChange", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onDeviceName(String deviceName) {
-                Toast.makeText(getBaseContext(), "onDeviceName", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getBaseContext(), "onDeviceName", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onToast(String message) {
-                Toast.makeText(getBaseContext(), "onToast", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getBaseContext(), "onToast", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onDataWrite(byte[] buffer) {
-                Toast.makeText(getBaseContext(), "onDataWrite", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getBaseContext(), "onDataWrite", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -242,7 +242,7 @@ public class BuscarDevices extends Activity implements AdapterView.OnItemClickLi
     protected void onResume() {
         super.onResume();
         if (bluetoothAdapter.isEnabled()) {
-            Toast.makeText(this, "Bluetooth está ligado", Toast.LENGTH_SHORT).show();
+            // Toast.makeText(this, "Bluetooth está ligado", Toast.LENGTH_SHORT).show();
             checarPermissoesEBuscar();
         } else {
             Intent enableIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);

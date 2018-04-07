@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -28,6 +29,7 @@ public class HomeActivity extends AppCompatActivity {
     private Button btBuscar;
     private Button btLigar;
     private final Context ctx = this;
+    HearmeRestService service;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +38,11 @@ public class HomeActivity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        this.load();
+    }
 
-        HearmeRestService service = new HearmeRestService();
+    private void load(){
+        service = new HearmeRestService();
         service.listaHistorico(new ApiResponse<List<Historico>>() {
 
             @Override
@@ -53,6 +58,8 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
     }
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
@@ -67,6 +74,10 @@ public class HomeActivity extends AppCompatActivity {
                 return true;
             case R.id.mapa:
                 startActivity(new Intent(this, MapsActivity.class));
+                return true;
+            case R.id.atualizar:
+                this.load();
+                Toast.makeText(this,"load", Toast.LENGTH_SHORT).show();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
