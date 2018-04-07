@@ -6,10 +6,6 @@
 
 
     <item android:title="Bluetooth"
-        android:id="@+id/btLigar"
-        app:showAsAction="never"/>
-
-    <item android:title="Buscar"
         android:id="@+id/btBuscar"
         app:showAsAction="never"/>
 
