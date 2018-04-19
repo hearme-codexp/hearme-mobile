@@ -23,7 +23,7 @@ public interface IHearmeService {
     Call<List<Historico>> listaHistorico(@Path("id") int clienteId);
 
     @POST("Historico")
-    Call<Historico> enviaDadoHistorico(@Body Historico dadoHistorico);
+    Call<Void> enviaDadoHistorico(@Body Historico dadoHistorico);
 
     @POST("Cadastrar/App")
     Call<Usuario> cadastrarUsuario(@Body Usuario usuario);

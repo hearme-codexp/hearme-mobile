@@ -15,6 +15,7 @@ import br.senai.sp.informatica.mobile.apphearme.R;
 import br.senai.sp.informatica.mobile.apphearme.domain.ApiResponse;
 import br.senai.sp.informatica.mobile.apphearme.model.Alerta;
 import br.senai.sp.informatica.mobile.apphearme.model.Historico;
+import br.senai.sp.informatica.mobile.apphearme.model.Usuario;
 import br.senai.sp.informatica.mobile.apphearme.service.HearmeRestService;
 
 
@@ -22,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText etLogin;
     private EditText etSenha;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
